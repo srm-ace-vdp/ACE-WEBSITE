@@ -1,0 +1,952 @@
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins,sans-serif;
+    transition: 1s ease;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --purple:#9000FF;
+    --yellow:#FFAD00;
+    --pink:#FF00E4;
+    --gradient:linear-gradient(126deg, rgba(144,0,255,1) 20%, rgba(189,70,151,1) 50%, rgba(255,173,0,1) 80%);
+}
+
+::-webkit-scrollbar{display: none;}
+
+body{
+    background-image: url("./assets/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loader{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img{
+    max-width: 15%;
+	animation: rot 1s cubic-bezier(0.785, 0.135, 0.150, 0.860) infinite both;
+
+}
+
+/*----------------------------------------------------MAIN--------------------------------------------------------------------*/
+
+.Navbar{
+    display: flex;
+    justify-content:space-between;
+    position: sticky;
+    top: 0;
+    padding: 20px 45px;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.Navbar::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(16px) saturate(180%);;
+    mask: linear-gradient(180deg, rgba(0,0,0,1) 46%, rgba(0,0,0,0.5439425770308124) 82%, rgba(0,0,0,0) 100%);
+    z-index: -1;
+}
+
+.Navbar .close{
+    font-size: 26px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0,.99,1,-0.02);
+    color: white;
+}
+
+.Navbar .open{
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0,.99,1,-0.02);
+    color: white;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    user-select: none;
+    color: white;
+}
+
+.links{
+    display: none;
+}
+
+.links a{
+    text-decoration: none;
+    font-family: Poppins,sans-serif;
+    margin-left: 40px;
+    color: white;
+    transition: all .3s cubic-bezier(.9,-0.03,.31,.98);
+}
+
+.links a:hover{
+    transform: scale(1.1);
+}
+
+.links-sm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;;
+    gap: 20px;
+    position: absolute;
+    top: 0px;
+    right: -100%;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.11);
+    height:100%; 
+    transition: 0.4s ease;
+    position: fixed;
+    box-shadow: -19px 0px 20px -13px rgba(0,0,0,0.75);
+    backdrop-filter: blur(50px);
+    z-index: 999;
+}
+.side{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.links-sm a{
+    text-decoration: none;
+    color: white;
+}
+
+/*--------------------------------------------------------Hero-----------------------------------------------------------------------------------*/
+
+.hero{
+    display: grid;
+    grid-template-areas: "b" "a";
+    padding: 20px;
+}
+
+
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn1{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: var(--gradient);
+    color: white;
+    font-weight: 500;
+}
+
+.btn2{
+    border-image: var(--gradient) 1;
+    border-width: 2px;
+    border-style: solid;
+    background:transparent;
+    padding: 10px 10px;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all .3s cubic-bezier(.9,-0.03,.31,.98);
+}
+
+.btn1:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.btn2:hover{
+    background: var(--gradient);
+    cursor: pointer;
+}
+
+.left{
+    grid-area: a;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    padding: 30px;
+}
+
+.left h1,h2,p{
+    font-family: Orbitron,sans-serif;
+}
+.left h1{
+    font-size: 1.5rem;
+}
+.left .grad{
+    font-size: 3rem;
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.right{
+    grid-area: b;
+    text-align: right;
+}
+
+.right img{
+    object-fit: contain;
+    width: 100%;
+    
+}
+
+
+/* --------------------------------------------------------DEPRTMENT--------------------------------------------------- */
+
+.department{
+    display: grid;
+    grid-template-areas: "dpimg" "dpinfo";
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10%;
+}
+
+.dpt_img{
+    padding:12% 10% 2% 10%;
+    text-align: center;
+    grid-area: dpimg;
+}
+
+.dpt_img img{
+    width: 93%;
+    z-index: 1;
+}
+
+.dpt_info{
+    grid-area: dpinfo;
+    color: white;
+    padding: 6% 12%;
+}
+
+.dpt_info h1{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: Orbitron,sans-serif;
+}
+.dpt_info p{
+    margin-top: 5%;
+    font-weight: 100;
+}
+.dtxt{
+    font-family: Orbitron,sans-serif;
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.btn3{
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    background: var(--gradient);
+    color: white;
+    font-weight: 500;
+    margin-top: 9%;
+}
+
+.btn3:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.bub1{
+    width: 60%;
+    position: absolute;
+    top: -2%;
+    left: -18%;
+    z-index: -1;
+    animation: floating 3s infinite ease-in-out;
+}
+
+.bub2{
+    width: 50%;
+    position: absolute;
+    bottom: -1%;
+    right: -11%;
+    z-index: -1;
+    animation: floating 3.5s infinite ease-in-out;
+}
+
+.do{
+    padding: 4% 12%;
+    color: white;
+}
+.do h1{
+    font-size: 1.7rem;
+    text-align: center;
+    padding-bottom: 2%;
+    font-family: Orbitron,sans-serif;
+}
+
+.counter-section {
+    color: white;
+    text-align: center;
+    display: grid;
+    grid-template-areas: "a1 a2" "a3 a4";
+    backdrop-filter: blur(10px);
+    background-color: #9000ff0e;
+    border-radius: 25px;
+    padding: 4%;
+    width: 73%;
+    margin: auto;
+}
+
+.counter-section h1{
+    font-size: 10px;
+    padding-top: 2%;
+}
+.counter {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.inf{
+    padding-top: 3.5%;
+}
+
+
+
+/* --------------------------------------------------------TEAM---------------------------------------------------------------- */
+
+.team{
+    width:100vw;
+    color: white;
+    margin:auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 4% 7%;
+}
+
+.minds h1{
+    font-family: Orbitron,sans-serif ;
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.cards{
+    padding: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.card{
+    width: 320px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(5px);
+    border-radius: 0 10% 0 10%;
+    border: 3px inset rgba(255, 255, 255, 0.333);
+    padding: 1.6%;
+    margin-top: 4%;
+}
+
+.card img {
+    width: 98%;
+    height: 85%;
+    border-radius: 0 10% 0 0;
+    padding-top: 1% ;
+    object-fit: cover;
+}
+
+.card h1{
+    font-family: Orbitron,sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 10px;
+    text-align: left;
+    padding: 3% 3%;
+}
+
+.card h2{
+    font-family: Poppins,sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: left;
+    padding: 0% 4%;
+}
+
+.bub3{
+    width: 60%;
+    position: absolute;
+    top: 4%;
+    left: -18%;
+    z-index: -1;
+    animation: floating 3s infinite ease-in-out;
+}
+
+.bub4{
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    right: -18%;
+    z-index: -1;
+    animation: floating 3.5s infinite ease-in-out;
+}
+
+.snr{
+    font-size: 2.5rem;
+    margin-top: 4%;
+    font-family: Orbitron,sans-serif;
+}
+/*------------------------------------------------------- Video -------------------------------------------------------------*/
+
+.vid{
+    width:100vw;
+    color: white;
+    margin:auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 4% 7% 7% 7%;
+    position: relative;
+}
+
+.vid h1{
+    font-size: 21px;
+}
+
+.vd{
+    background-image: url('./assets/metaverse\ 1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+    padding: 1%;
+}
+.frame{
+    width: 355px;
+    height: 185px;
+    padding: 6px;
+    border-radius: 5%;
+}
+
+
+/* -----------------------------------------------------Gallery--------------------------------------------------------------- */
+.gal{
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    padding:8%;
+}
+
+.gallery > img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+.image-container :hover{
+    transform: scale(1.1);
+}
+.gallery > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.gallery > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.gallery .tall {
+    grid-row: span 2;
+}
+.gallery .wide {
+    grid-column: span 2;
+}
+
+.gtxt h1{
+    color: white;
+    font-family: Orbitron,sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ----------------------------------------------------CONTACT--------------------------------------------------------------- */
+
+.contact{
+    width: 100vw;
+    overflow: hidden;
+    padding: 0% 10% 15% 10%;
+    text-align: center;
+    position: relative;
+    background: url('#') top no-repeat;
+    background-size: cover; 
+}
+
+.contact .minds{
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 5% ;
+}
+
+.contact .minds h1{
+    font-size: 2rem;
+    padding: 0;
+}
+
+.contact .card{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding:3%;
+    margin: auto;
+}
+
+.form{
+    width: 100%;
+    padding: 2%;
+}
+
+.form input , textarea{
+    color: white;
+    width: 100%;
+    margin-top: 3%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(5px);
+    border: 2px inset rgba(255, 255, 255, 0.333);
+    padding: 2%;
+    resize: none;
+}
+
+#msg{
+    padding: 4% 2%;
+}
+
+#submit{
+    width: 100%;
+    margin-top: 4%;
+    border-radius: 20px;
+    border: none;
+    padding: 2%;
+    color: white;
+    background: linear-gradient(90deg, #763AF5 0%, #A604F2 117.18%);
+    cursor: pointer;
+}
+
+#submit:hover{
+    transform: scale(1.05);
+}
+
+#succ{
+    display: none;
+}
+
+#succ h1{
+    text-align: center;
+    font-size: 1rem;
+}
+
+#succ img{
+    animation: floating 3s infinite ease-in-out;
+    width: 55%;
+}
+/*-----------------------------------------------------Responsiveness---------------------------------------------------------*/
+
+@media(min-width:475px){
+    .hero{
+        padding-left: 45px;
+    }
+    
+    .buttons{
+        display: block;
+    }
+    .btn2{
+        margin-left: 10px;
+    }
+
+    .counter-section h1{
+        font-size: 13px;
+    }
+}
+
+@media(min-width:705px){
+    
+    .Navbar{
+        padding: 25px 70px;
+    }
+
+    .toggle , .links-sm{
+        display: none;
+    }
+
+    .links{
+        display: flex;
+    }
+
+    .hero{
+        grid-template-areas: "a b" !important;
+        padding: 0 40px;
+    }
+    
+    .right img{
+        width: 350px;
+    }
+      
+    .left{
+        margin: 0px;
+        padding: 0;
+    }
+
+    .hero{
+        grid-template-areas: "a b" !important;
+        padding: 70px 20px;
+    }
+
+}
+
+@media(min-width:768px){
+    
+    .loader img{
+        max-width: 7%;
+    }
+    
+    .hero{
+        padding-bottom: 2%;
+    }
+    .left{
+        padding: 0 40px;
+    }
+    .left h1{
+        font-size: 1.4rem;
+    }
+
+    .department{
+        grid-template-areas: "dpimg dpinfo";
+    
+    }
+
+    .dpt_img{   
+        width: 350px;
+        margin-left: 20px;
+        padding-bottom: 6%;
+    }
+
+    .dpt_img img{
+        width: 120%;
+    }
+
+    .dpt_info{
+       width: 400px;
+    }
+    .dpt_info h1{
+        font-size: 1.5rem;
+        padding-top: 7%;
+    }
+
+    .btn3{
+        font-size: 1rem;
+    }
+
+    .counter-section h1{
+        font-size: 10px;
+    }
+
+    .bub1,.bub2{
+        width: 27%;
+    }
+    .bub3,.bub4{
+        width: 35%;
+    }
+    .bub1{
+        left:-9%;
+    }
+    .bub2{
+        right:-4%;
+    }
+    
+    .minds h1{
+        font-size: 30px;
+    }
+    .cards{
+        padding: 0;
+    }
+    .card{
+        max-width: 48%;
+    }
+
+    .frame{
+        width: 610px;
+        height: 338px;
+        padding: 4px;
+        border-radius: 3%;
+    }    
+    
+    .gallery{
+        padding: 2% 8%;
+    }
+    
+    .contact .card{
+        max-width: 70%;
+    }
+}
+
+@media(min-width:1024px){
+
+
+    .hero{
+     height: 80vh;
+    } 
+
+    .right img{
+        object-fit: contain;
+        width: 450px;
+        margin-top: 40px;
+    }
+
+    .hero{
+        padding: 0 7%;
+    }    
+
+    .left{
+        gap: 30px;
+        padding: 0;
+    }
+
+    .left h1{
+        font-size: 2rem;
+    }
+
+    .left .grad{
+        font-size: 4rem;
+    }
+
+    .btn1,.btn2{
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+    .department{
+        padding: 0 3%;
+    }
+    .dpt_img{
+        width: 43vw;
+        margin-left: 10%;
+        padding-top: 0;
+    }
+
+    .dpt_info{
+        width: 50vw;
+        margin-left: 5%;
+        padding-top: 0;
+    }
+    .dpt_info h1{
+        font-size: 30px;
+    }
+    .btn3{
+        font-size: 1.3rem;
+    }
+    .do h1{
+        font-size: 2rem;
+    }
+    .bub2{
+        bottom: -5%;
+    }
+    .card{
+        max-width: 32%;
+    }
+    .minds h1{
+        font-size: 40px;
+        padding-bottom: 0;
+    }
+   
+    .card h1{
+        font-size: 15px;
+    }
+    .card h2{
+        font-size: 12px;
+    }
+
+    .frame{
+        width: 830px;
+        height: 455px;
+        padding: 4px;
+        border-radius: 3%;
+    }    
+    .vid .bub2{
+        bottom:0;
+        right: 0;
+    }
+
+    .gallery{
+        padding-bottom: 5%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 190px;
+    }
+
+    .gtxt h1{
+        font-size: 2.3rem;
+    }
+    .bub3, .bub4{
+        width: 25%;
+    }
+    .gal .bub3{
+        left: -5%;
+        top: -5%;
+        width: 22%;
+    }
+    .gal .bub4{
+    right: -7%;
+    width: 22%;
+   }
+   
+   .contact .minds{
+        padding-top: 0;
+   }
+   .contact .minds h1{
+    font-size: 3rem;
+   }
+   .contact .card{
+    max-width: 60%;
+   }
+   .contact .bub3{
+    top: 6%;
+    left: 0;
+   }
+   .contact .bub4{
+    right: 0;
+   }
+
+   #req{
+    font-size: 13px;
+   }
+}
+
+@media(min-width:1280px){
+    .department{
+        padding:3%
+    }
+    .right img{
+        width:85%;
+        margin-top: 0;
+    }
+    .left{
+        gap: 30px;
+    }
+    
+    .left h1{
+        font-size: 3rem;
+    }
+    
+    .left .grad{
+        font-size: 5rem;
+    }
+    
+    .btn1,.btn2{
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+    
+    .dpt_img{
+        width: 85%;
+    }
+    .dpt_info{
+        width: 50vw;
+        padding-top: 0;
+        margin-left: 0;
+    }
+    .dpt_info h1{
+        font-size: 43px;
+        padding-top: 6%;
+    }
+    .do h1{
+        font-size: 2.5rem;
+    }
+    .counter-section{
+       padding: 4% 0;
+    }
+    .counter-section h1{
+        font-size: 14px;
+    }
+    .inf{
+        padding: 3%;
+    }
+    .frame{
+        width: 1040px;
+        height: 562px;
+        padding: 4px;
+        border-radius: 3%;
+    } 
+    .gallery{
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+    #succ h1{
+        font-size: 1.3rem;
+    }
+    #req{
+        font-size: 16px;
+       }
+}
+@media(min-width:1536px){}
+
+
+/* ---------------------------------------------------ANIMATIONS-------------------------------------------------------------------------- */
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(3px, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes rot {
+    0%{
+       transform: rotate(0deg);
+      }
+   100%{
+       transform: rotate(360deg);
+      }
+   }
