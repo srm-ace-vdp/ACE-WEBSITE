@@ -1,0 +1,124 @@
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+
+:root{
+    --purple:#9000FF;
+    --yellow:#FFAD00;
+    --pink:#FF00E4;
+    --gradient:linear-gradient(126deg, rgba(144,0,255,1) 20%, rgba(189,70,151,1) 50%, rgba(255,173,0,1) 80%);
+}
+
+footer{
+    color:white;
+    padding:3% 10%;
+    display: grid;
+    grid-template-areas: "a a" "b c";
+}
+
+.ubr{
+    grid-area: a;
+    width: 100%;
+   
+}
+.ubr h1{
+    font-size: 2.2rem;
+    font-family: Orbitron,sans-serif;
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;  
+}
+
+footer p{
+    font-family: Poppins,sans-serif;
+    font-size: 12px;
+    padding: 5% 0;
+    line-height: 20px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.abt{
+    grid-area: b;
+}
+
+.abt h1{
+    font-family: Orbitron,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 5%;
+}
+
+.abt h2{
+    font-family: Poppins,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.cont{
+    grid-area: c;
+}    
+.cont h1{
+    font-family: Orbitron,sans-serif;
+    font-size: 14px ;
+    font-weight: 700;
+}
+.icons img{
+    padding:  10% 2% ;
+}
+.icons img:hover{
+    transform: scale(1.2);
+}
+.btn-link{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-link:hover{
+    transform: scale(1.1);
+}
+
+.abt h1:hover{
+    transform: scale(1.1);
+}
+
+/* xs */
+ @media (min-width: 475px) {} 
+/* sm */
+ @media (min-width: 640px) {} 
+/* md */
+ @media (min-width: 768px) {
+
+    footer{
+        grid-template-areas: "a b c";
+        padding:1% 10%;
+        gap: 40px;
+    }
+    footer p{
+        width: 80%;
+        padding-top: 1%;
+    }
+    .abt,.cont{
+        padding: 10%;
+    }
+    .ubr{
+        width: 90%;
+    }
+    .cont{
+        width: 140%;
+    }
+    .icons img{
+        padding:5% 0;
+    }
+    
+ } 
+/* lg */
+ @media (min-width: 1024px) {}
+ 
+/* xl */
+ @media (min-width: 1280px) {}
+
+/* 2xl */
+ @media (min-width: 1536px) {} 

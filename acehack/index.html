@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE HACKS - AI Hackathon</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                ACE HACKS 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">TIMELINE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prizes">PRIZES</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#registration">REGISTER NOW</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center pt-3">
+                    <h1 class="mb-1">ACE HACKS</h1>
+                    <h3 class="mb-3 text-light fw-normal fs-6 font-monospace">In collaboration with</h3>
+                    <img src="magoosh-logo.svg" alt="Sponsor Logo" height="35" class="d-inline-block align-top mb-4">
+                    <p class="lead mb-4">Elevate your experience with Artificial Intelligence</p>
+                    <p>Join us for an immersive 24-hour hackathon focused on Machine Learning innovation</p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-timer">
+                        <div class="timer-container">
+                            <div class="timer-box">
+                                <span id="days">00</span>
+                                <p>DAYS</p>
+                            </div>
+                            <div class="timer-box">
+                                <span id="hours">00</span>
+                                <p>HOURS</p>
+                            </div>
+                            <div class="timer-box">
+                                <span id="minutes">00</span>
+                                <p>MINUTES</p>
+                            </div>
+                            <div class="timer-box">
+                                <span id="seconds">00</span>
+                                <p>SECONDS</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#registration" class="btn btn-primary">REGISTER NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About The Event</h2>
+                    <p>ACE Hacks is a prestigious hackathon designed to challenge and inspire the next generation of tech innovators. Our event brings together the brightest minds to collaborate, create, and compete in developing cutting-edge solutions.</p>
+                    <p>This year's hackathon will focus on leveraging Machine Learning to solve real-world problems, with multiple rounds designed to test different aspects of your technical and presentation skills.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="theme-box mt-4 mt-lg-0">
+                        <div class="text-center">
+                            <div class="theme-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="mb-3">Theme: Machine Learning</h3>
+                            <p class="mb-0">This year's hackathon challenges participants to develop innovative solutions using Machine Learning technologies. Problem statements will be released soon, so stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="timeline" class="py-5 tech-bg">
+        <div class="container">
+            <h2 class="section-title text-center">Event Timeline</h2>
+            <div class="timeline-container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">ROUND 1 (Until March 19th)</div>
+                                <h4 class="timeline-title">PPT Submission</h4>
+                                <p class="timeline-description">Submit your idea presentation outlining your solution approach, key features, and implementation strategy.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">ROUND 2 (March 19th - 21st)</div>
+                                <h4 class="timeline-title">Prototype / Architecture / System Design</h4>
+                                <p class="timeline-description">Develop and submit a working prototype or detailed system architecture of your project.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">ROUND 3 (March 24th - 25th)</div>
+                                <h4 class="timeline-title">24-Hour Campus Hackathon</h4>
+                                <p class="timeline-description">Finalists will participate in an intense 24-hour offline hackathon on campus to complete their projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Prizes & Rewards</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="prize-card mb-4">
+                        <h3 class="prize-card-title text-center">1st Prize</h3>
+                        <div class="prize-amount text-center">₹6,000</div>
+                        <p class="text-center mb-0">Plus Renault Paid Internship Offer</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="prize-card mb-4">
+                        <h3 class="prize-card-title text-center">2nd Prize</h3>
+                        <div class="prize-amount text-center">₹4,000</div>
+                        <p class="text-center mb-0">And recognition for your innovation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p>All participants will receive certificates, swag, and networking opportunities with industry professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>Team Registration Form</h2>
+                    
+                    <form id="registrationForm" class="registration-form">
+                        <div class="form-group">
+                            <label for="teamName">Team Name <span class="text-danger">*</span></label>
+                            <input type="text" id="teamName" class="form-control" required>
+                            <div class="error-text" id="teamName-error"></div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Team Leader (Participant 1)</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="p1Name">Name <span class="text-danger">*</span></label>
+                                    <input type="text" id="p1Name" class="form-control" required>
+                                    <div class="error-text" id="p1Name-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="p1Reg">Registration Number <span class="text-danger">*</span></label>
+                                    <input type="text" id="p1Reg" class="form-control" required>
+                                    <div class="error-text" id="p1Reg-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="p1College">College <span class="text-danger">*</span></label>
+                                    <input type="text" id="p1College" class="form-control" required>
+                                    <div class="error-text" id="p1College-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="leaderWhatsapp">WhatsApp Number <span class="text-danger">*</span></label>
+                                    <input type="tel" id="leaderWhatsapp" class="form-control" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+                                    <div class="error-text" id="leaderWhatsapp-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="leaderEmail">Email <span class="text-danger">*</span></label>
+                                    <input type="email" id="leaderEmail" class="form-control" required>
+                                    <div class="error-text" id="leaderEmail-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Optional Team Members -->
+                        <div class="card">
+                            <div class="card-header">Participant 2</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="p2Name">Name</label>
+                                    <input type="text" id="p2Name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p2Reg">Registration Number</label>
+                                    <input type="text" id="p2Reg" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p2College">College</label>
+                                    <input type="text" id="p2College" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Participant 3 (Optional)</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="p3Name">Name</label>
+                                    <input type="text" id="p3Name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p3Reg">Registration Number</label>
+                                    <input type="text" id="p3Reg" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p3College">College</label>
+                                    <input type="text" id="p3College" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Participant 4 (Optional)</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="p4Name">Name</label>
+                                    <input type="text" id="p4Name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p4Reg">Registration Number</label>
+                                    <input type="text" id="p4Reg" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p4College">College</label>
+                                    <input type="text" id="p4College" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="year">Year <span class="text-danger">*</span></label>
+                                    <select id="year" class="form-control" required>
+                                        <option value="">Select Year</option>
+                                        <option value="1st">1st Year</option>
+                                        <option value="2nd">2nd Year</option>
+                                        <option value="3rd">3rd Year</option>
+                                        <option value="4th">4th Year</option>
+                                    </select>
+                                    <div class="error-text" id="year-error"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="dept">Department <span class="text-danger">*</span></label>
+                                    <input type="text" id="dept" class="form-control" required>
+                                    <div class="error-text" id="dept-error"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="classAndSec">Class and Section <span class="text-danger">*</span></label>
+                                    <input type="text" id="classAndSec" class="form-control" required>
+                                    <div class="error-text" id="classAndSec-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transactionId">Transaction ID <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" id="transactionId" class="form-control" required>
+                                <button type="button" class="btn btn-success" onclick="openPaymentLink()">
+                                    <i class="bi bi-credit-card"></i> Pay ₹400
+                                </button>
+                            </div>
+                            <div class="error-text" id="transactionId-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="screenshot">Payment Screenshot <span class="text-danger">*</span> (Max 5MB)</label>
+                            <input type="file" id="screenshot" class="form-control" accept="image/*" required>
+                            <div class="error-text" id="screenshot-error"></div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-primary w-100">Submit Registration</button>
+                        
+                        <div id="loading" class="text-center mt-3" style="display:none;">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Submitting... Please wait</p>
+                        </div>
+                        
+                        <div id="errorMessage" class="alert alert-danger mt-3" style="display:none;"></div>
+                        <div id="successMessage" class="alert alert-success mt-3" style="display:none;"></div>
+                    </form>
+                    <a href="YOUR_UNSTOP_LINK" class="btn btn-primary">
+                        <img src="unstop-logo.png" alt="Unstop Logo" height="24" class="me-2">
+                        Register on Unstop
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <p>&copy; 2025 ACE HACKS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+    <script>
+        // Payment Link Function
+        function openPaymentLink() {
+            const paymentUrl = 'upi://pay?pa=EzE0079941@CUB&pn=DEP OF CSE VADAPALANI CAMPUS&cu=INR&mode=02&sign=ZSPli8DuxCwxuWNdXg38I7bRGbc+YzvzpShMebtKHt4=&orgid=123456&am=400';
+            window.open(paymentUrl, '_blank');
+        }
+
+        // Countdown Timer Script
+        function updateCountdown() {
+            const eventDate = new Date('2025-03-15T00:00:00');
+            const now = new Date();
+            const difference = eventDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+
+    <script>
+        const supabaseUrl = 'https://qtgmhupqfiwqzkzrmhwe.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0Z21odXBxZml3cXprenJtaHdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDExNDMzMjMsImV4cCI6MjA1NjcxOTMyM30.mrm3pF4r8MKwDUXIZVry6biHHrGDNZcjokva77BtLpM';
+        // Fix: Create client using proper object reference
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        // Form validation functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function validatePhone(phone) {
+            const re = /^[0-9]{10}$/;
+            return re.test(phone);
+        }
+        
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(`${fieldId}-error`);
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+            field.classList.add('error');
+        }
+        
+        function hideError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(`${fieldId}-error`);
+            if (errorElement) {
+                errorElement.style.display = 'none';
+            }
+            field.classList.remove('error');
+        }
+        
+        function showGlobalError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // Auto-hide after 8 seconds
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 8000);
+        }
+        
+        function showSuccess(message) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+        
+        // Validate file size
+        document.getElementById('screenshot').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            
+            if (file) {
+                // Check if file size exceeds 5MB
+                if (file.size > 5 * 1024 * 1024) {
+                    showError('screenshot', 'File size should not exceed 5MB');
+                    e.target.value = ''; // Clear the file input
+                } else {
+                    hideError('screenshot');
+                }
+            }
+        });
+        
+        // Validate phone number input
+        document.getElementById('leaderWhatsapp').addEventListener('input', function(e) {
+            const phone = e.target.value;
+            if (phone && !validatePhone(phone)) {
+                showError('leaderWhatsapp', 'Please enter a valid 10-digit phone number');
+            } else {
+                hideError('leaderWhatsapp');
+            }
+        });
+        
+        // Validate email input
+        document.getElementById('leaderEmail').addEventListener('input', function(e) {
+            const email = e.target.value;
+            if (email && !validateEmail(email)) {
+                showError('leaderEmail', 'Please enter a valid email address');
+            } else {
+                hideError('leaderEmail');
+            }
+        });
+        
+        document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingIndicator = document.getElementById('loading');
+            
+            // Hide previous error messages
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            let hasError = false;
+            
+            // Validate required fields
+            const requiredFields = [
+                'teamName', 'p1Name', 'p1Reg', 'p1College', 
+                'leaderWhatsapp', 'leaderEmail', 'year', 
+                'dept', 'classAndSec', 'transactionId'
+            ];
+            
+            // Clear previous error states
+            requiredFields.forEach(fieldId => {
+                hideError(fieldId);
+            });
+            
+            // Check each required field
+            for (let fieldId of requiredFields) {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    showError(fieldId, 'This field is required');
+                    hasError = true;
+                }
+            }
+            
+            // Special validation for email and phone
+            const email = document.getElementById('leaderEmail').value;
+            if (email && !validateEmail(email)) {
+                showError('leaderEmail', 'Please enter a valid email address');
+                hasError = true;
+            }
+            
+            const phone = document.getElementById('leaderWhatsapp').value;
+            if (phone && !validatePhone(phone)) {
+                showError('leaderWhatsapp', 'Please enter a valid 10-digit phone number');
+                hasError = true;
+            }
+            
+            // Check screenshot file
+            const screenshotInput = document.getElementById('screenshot');
+            if (!screenshotInput.files || !screenshotInput.files[0]) {
+                showError('screenshot', 'Please upload a payment screenshot');
+                hasError = true;
+            } else {
+                const file = screenshotInput.files[0];
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    showError('screenshot', 'File size should not exceed 5MB');
+                    hasError = true;
+                }
+            }
+            
+            if (hasError) {
+                showGlobalError('Please correct the errors in the form');
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            loadingIndicator.style.display = 'flex';
+        
+            try {
+                // Get screenshot file
+                const screenshotFile = document.getElementById('screenshot').files[0];
+                
+                // Generate unique filename
+                const fileExt = screenshotFile.name.split('.').pop();
+                const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
+                const filePath = `screenshots/${fileName}`;
+        
+                // Upload screenshot to Supabase storage
+                const { data: uploadData, error: uploadError } = await supabaseClient.storage
+                    .from('SCREENSHOT')
+                    .upload(filePath, screenshotFile, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
+        
+                if (uploadError) {
+                    console.error('Upload Error:', uploadError);
+                    throw new Error(`Failed to upload screenshot: ${uploadError.message}`);
+                }
+        
+                // Get public URL - this is the correct way to get it
+                const screenshotUrl = supabaseClient.storage
+                    .from('SCREENSHOT')
+                    .getPublicUrl(filePath).data.publicUrl;
+        
+                // Prepare team registration data
+                const teamData = {
+                    team_name: document.getElementById('teamName').value.trim(),
+                    
+                    // Participant 1 (Leader) Details
+                    p1_name: document.getElementById('p1Name').value.trim(),
+                    p1_reg: document.getElementById('p1Reg').value.trim(),
+                    p1_college: document.getElementById('p1College').value.trim(),
+                    
+                    // Participant 2 Details (Optional)
+                    p2_name: document.getElementById('p2Name').value.trim() || null,
+                    p2_reg: document.getElementById('p2Reg').value.trim() || null,
+                    p2_college: document.getElementById('p2College').value.trim() || null,
+                    
+                    // Participant 3 Details (Optional)
+                    p3_name: document.getElementById('p3Name').value.trim() || null,
+                    p3_reg: document.getElementById('p3Reg').value.trim() || null,
+                    p3_college: document.getElementById('p3College').value.trim() || null,
+                    
+                    // Participant 4 Details (Optional)
+                    p4_name: document.getElementById('p4Name').value.trim() || null,
+                    p4_reg: document.getElementById('p4Reg').value.trim() || null,
+                    p4_college: document.getElementById('p4College').value.trim() || null,
+                    
+                    // Leader Contact Details
+                    leader_whatsapp: document.getElementById('leaderWhatsapp').value.trim(),
+                    leader_email: document.getElementById('leaderEmail').value.trim(),
+                    
+                    // Additional Details
+                    year: document.getElementById('year').value,
+                    dept: document.getElementById('dept').value.trim(),
+                    class_and_sec: document.getElementById('classAndSec').value.trim(),
+                    transaction_id: document.getElementById('transactionId').value.trim(),
+                    
+                    // Screenshot URL
+                    screenshot_bucket_link: screenshotUrl,
+                    
+                    // Timestamp matches your table's created_at column
+                    // No need to add registered_at as the table uses created_at with DEFAULT NOW()
+                };
+        
+                // Insert team data into Supabase
+                const { data, error } = await supabaseClient
+                    .from('teams')
+                    .insert([teamData]);
+        
+                if (error) {
+                    console.error('Database Insertion Error:', error);
+                    throw new Error(`Failed to save registration: ${error.message}`);
+                }
+        
+                // Success: Reset form and show success message
+                showSuccess('Registration Successful! Thank you for registering.');
+                document.getElementById('registrationForm').reset();
+                
+                // Scroll to success message
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (error) {
+                // Detailed error handling
+                console.error('Registration Error:', error);
+                showGlobalError(error.message || 'An unexpected error occurred. Please try again.');
+            } finally {
+                // Re-enable submit button and hide loading
+                submitBtn.disabled = false;
+                loadingIndicator.style.display = 'none';
+            }
+        });
+        
+        // Field-level validation
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('blur', function(event) {
+                if (event.target.hasAttribute('required') && !event.target.value.trim()) {
+                    showError(event.target.id, 'This field is required');
+                } else {
+                    hideError(event.target.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
