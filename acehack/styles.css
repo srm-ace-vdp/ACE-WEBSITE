@@ -520,8 +520,43 @@ html, body {
 .timeline-description {
     color: white; /* Updated to white */
     margin-bottom: 0;
-}
-
+  }
+  /* Event/Hackathon section */
+  .flyer-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(234, 165, 245, 0.438);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  /* Sponsors sections */
+  .sponsor-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--dark-color);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .sponsor-card img{
+    margin: 1rem 0;
+  }
+  .sponsor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+  }
   /* Prizes Section */
   #prizes {
     position: relative;
