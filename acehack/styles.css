@@ -94,19 +94,16 @@ html, body {
   }
   
   /* Navigation */
-  /* Navigation */
 .navbar {
-  background: transparent; /* Remove background color */
+  background: transparent; 
   transition: var(--transition);
   padding: 15px 0;
   margin: 8px 10px;
   border-radius: 20px;
-  position: sticky; /* Add for pseudo-element positioning */
-  z-index: 999;
-  box-shadow: none; /* Remove the box shadow */
+  position: sticky; 
+  box-shadow: none; 
 }
 
-/* Add the glass effect with mask */
 .navbar::after {
   content: '';
   position: absolute;
@@ -137,8 +134,8 @@ html, body {
   color: white !important;
   text-transform: uppercase;
   letter-spacing: 2px;
-  -webkit-text-fill-color: white; /* Override previous styles */
-  background: none; /* Remove gradient background */
+  -webkit-text-fill-color: white; 
+  background: none; 
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -347,7 +344,6 @@ html, body {
     letter-spacing: 1px;
   }
   
-  /* Make sure the image is responsive */
   .hero-section img {
     max-width: 100%;
     height: auto;
@@ -359,8 +355,8 @@ html, body {
   #about {
     position: relative;
     padding: 5rem 0;
-    color: var(--light-color); /* Ensure text is readable */
-    overflow: hidden; /* Ensure content doesn't overflow */
+    color: var(--light-color);
+    overflow: hidden; 
 }
 
 #about p, #about h2 {
@@ -480,10 +476,9 @@ html, body {
     z-index: 1;
 }
 
-/* ✨ Glassmorphism effect for timeline items */
 .timeline-content {
-    background: rgba(255, 255, 255, 0.1); /* Transparent white */
-    backdrop-filter: blur(15px); /* Blurry effect */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 10px;
     padding: 1.5rem;
@@ -491,21 +486,19 @@ html, body {
     position: relative;
     transition: var(--transition);
     border-left: 5px solid var(--accent-color);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-/* Smooth hover effect */
 .timeline-content:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* 🏷️ Updated text colors for readability */
 .timeline-date {
     display: inline-block;
     padding: 0.3rem 1rem;
     background: var(--primary-color);
-    color: white; /* Updated to white */
+    color: white; 
     border-radius: 30px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -513,12 +506,12 @@ html, body {
 }
 
 .timeline-title {
-    color: white; /* Updated to white */
+    color: white; 
     margin-bottom: 0.5rem;
 }
 
 .timeline-description {
-    color: white; /* Updated to white */
+    color: white;
     margin-bottom: 0;
   }
   /* Event/Hackathon section */
@@ -563,7 +556,6 @@ html, body {
     padding: 5rem 0;
 }
 
-/* General Prize Card Styles */
 .prize-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
