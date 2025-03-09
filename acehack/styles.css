@@ -780,10 +780,11 @@ html, body {
 /* Mobile view specific styles */
 @media (max-width: 767px) {
   .hero-section .col-md-12:last-child img {
-      width: 320px !important;
+      width: 280px !important;
       max-height: 500px;
       object-fit: contain;
       margin: 0 auto;
+      border-radius: 2px;
   }
 }
 
