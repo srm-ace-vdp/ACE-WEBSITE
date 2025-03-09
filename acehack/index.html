@@ -383,6 +383,20 @@
         </div>
     </section>
 
+    <div id="whatsappPopup" class="acehacks-whatsapp-popup">
+        <div class="acehacks-whatsapp-popup-content">
+            <span class="acehacks-whatsapp-close">&times;</span>
+            <div class="acehacks-whatsapp-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" alt="WhatsApp Logo" class="acehacks-whatsapp-logo">
+                <h3>Join Our WhatsApp Group</h3>
+            </div>
+            <p>Stay updated with event announcements, updates, and connect with other participants!</p>
+            <a href="https://chat.whatsapp.com/IreeRf6XAIyFSa1LuzzvwN" target="_blank" class="acehacks-whatsapp-btn">
+                <i class="bi bi-whatsapp"></i> Join Group
+            </a>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="py-4">
         <div class="container">
@@ -397,6 +411,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
     <script>
+
+    // WhatsApp Popup Functions
+    function showWhatsAppPopup() {
+        document.getElementById('whatsappPopup').style.display = 'flex';
+    }
+
+    // Close popup when clicking the X
+    document.querySelector('.acehacks-whatsapp-close').addEventListener('click', function() {
+        document.getElementById('whatsappPopup').style.display = 'none';
+    });
+
+    // Close popup when clicking outside the popup content
+    window.addEventListener('click', function(event) {
+        const popup = document.getElementById('whatsappPopup');
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+
 
         // Payment Link Function
         function openPaymentLink() {
@@ -663,8 +697,9 @@
         
                 // Success: Reset form and show success message
                 showSuccess('Registration Successful! Thank you for registering.');
-                document.getElementById('registrationForm').reset();
                 
+                document.getElementById('registrationForm').reset();
+                setTimeout(showWhatsAppPopup, 1000); 
                 // Scroll to success message
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } catch (error) {

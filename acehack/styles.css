@@ -1008,3 +1008,272 @@ html, body {
       border-radius: 8px;
     }
   }
+
+
+  /* WhatsApp Popup Styles - Cyberpunk Tech Theme */
+.acehacks-whatsapp-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(14, 0, 36, 0.85);
+  align-items: center;
+  justify-content: center;
+  animation: acehacks-glitch-in 0.4s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes acehacks-glitch-in {
+  0% { opacity: 0; }
+  10% { opacity: 0.9; }
+  15% { opacity: 0.3; }
+  20% { opacity: 1; }
+  25% { opacity: 0.8; }
+  30% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.acehacks-whatsapp-popup-content {
+  position: relative;
+  background-color: rgba(30, 12, 48, 0.95);
+  margin: auto;
+  padding: 30px;
+  border-radius: 3px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  animation: acehacks-tech-reveal 0.5s ease-out;
+  box-shadow: 0 0 20px rgba(198, 55, 255, 0.4), 
+              0 0 40px rgba(198, 55, 255, 0.2),
+              inset 0 0 15px rgba(198, 55, 255, 0.3);
+  border: 1px solid rgba(198, 55, 255, 0.6);
+  color: #fff;
+  background-image: 
+      linear-gradient(135deg, rgba(50, 15, 70, 0.7) 0%, rgba(30, 5, 40, 0.7) 100%),
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 0v100h100V0H0zm1 1h98v98H1V1z' fill='rgba(198, 55, 255, 0.2)'/%3E%3Cpath d='M0 50h100M50 0v100' stroke='rgba(198, 55, 255, 0.1)' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+@keyframes acehacks-tech-reveal {
+  0% {
+      transform: translateY(30px) scale(0.95);
+      opacity: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  10% {
+      clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+  }
+  30% {
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  60% {
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
+  }
+  100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.acehacks-whatsapp-popup-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #25D366, #c637ff, #25D366);
+  z-index: 1;
+  animation: acehacks-glow-line 3s infinite linear;
+}
+
+@keyframes acehacks-glow-line {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.acehacks-whatsapp-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #c637ff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px rgba(198, 55, 255, 0.8);
+}
+
+.acehacks-whatsapp-close:hover {
+  color: #25D366;
+  transform: rotate(90deg);
+  text-shadow: 0 0 12px rgba(37, 211, 102, 0.8);
+}
+
+.acehacks-whatsapp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 15px;
+  position: relative;
+}
+
+.acehacks-whatsapp-logo {
+  width: 45px;
+  height: 45px;
+  filter: drop-shadow(0 0 5px rgba(37, 211, 102, 0.8));
+  animation: acehacks-pulse 2s infinite alternate;
+}
+
+@keyframes acehacks-pulse {
+  0% { filter: drop-shadow(0 0 3px rgba(37, 211, 102, 0.6)); }
+  100% { filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.9)); }
+}
+
+.acehacks-whatsapp-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #c637ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(198, 55, 255, 0.4);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.acehacks-whatsapp-header h3::after {
+  content: 'JOIN NOW';
+  position: absolute;
+  font-size: 0.55rem;
+  top: -12px;
+  right: -10px;
+  background: #25D366;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(-5deg);
+}
+
+.acehacks-whatsapp-popup p {
+  margin-bottom: 30px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 10px;
+}
+
+.acehacks-whatsapp-popup p::before {
+  content: '>';
+  color: #c637ff;
+  position: absolute;
+  left: -5px;
+  font-weight: bold;
+}
+
+.acehacks-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  border: 2px solid #25D366;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.acehacks-whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #25D366;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.acehacks-whatsapp-btn:hover {
+  color: white;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+.acehacks-whatsapp-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.acehacks-whatsapp-btn i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.acehacks-whatsapp-btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Grid background effect */
+.acehacks-whatsapp-popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(198, 55, 255, .05) 25%, rgba(198, 55, 255, .05) 26%, transparent 27%, transparent 74%, rgba(198, 55, 255, .05) 75%, rgba(198, 55, 255, .05) 76%, transparent 77%, transparent), 
+                    linear-gradient(90deg, transparent 24%, rgba(198, 55, 255, .05) 25%, rgba(198, 55, 255, .05) 26%, transparent 27%, transparent 74%, rgba(198, 55, 255, .05) 75%, rgba(198, 55, 255, .05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  z-index: -1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+  .acehacks-whatsapp-popup-content {
+      width: 95%;
+      padding: 25px 15px;
+  }
+  
+  .acehacks-whatsapp-header {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .acehacks-whatsapp-btn {
+      width: 100%;
+  }
+  
+  .acehacks-whatsapp-header h3 {
+      font-size: 1.4rem;
+  }
+  
+  .acehacks-whatsapp-header h3::after {
+      top: -10px;
+      right: -5px;
+  }
+}
