@@ -1277,3 +1277,478 @@ html, body {
       right: -5px;
   }
 }
+
+
+/* QR Code Toggle Styles - Cyberpunk Theme */
+.acehacks-qr-section {
+  margin-bottom: 25px;
+  background: rgba(30, 12, 48, 0.4);
+  border: 1px solid rgba(198, 55, 255, 0.4);
+  border-radius: 3px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.acehacks-qr-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(45deg, transparent 48%, rgba(198, 55, 255, .05) 49%, rgba(198, 55, 255, .05) 51%, transparent 52%), 
+                    linear-gradient(-45deg, transparent 48%, rgba(198, 55, 255, .05) 49%, rgba(198, 55, 255, .05) 51%, transparent 52%);
+  background-size: 30px 30px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.acehacks-qr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.acehacks-qr-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #c637ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.acehacks-qr-header h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, #c637ff, transparent);
+}
+
+.acehacks-qr-toggle {
+  background: transparent;
+  border: 1px solid #c637ff;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.acehacks-qr-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(198, 55, 255, 0.2), transparent);
+  transition: all 0.4s ease;
+}
+
+.acehacks-qr-toggle:hover::before {
+  left: 100%;
+}
+
+.acehacks-qr-toggle:hover {
+  box-shadow: 0 0 15px rgba(198, 55, 255, 0.5);
+  border-color: #c637ff;
+}
+
+.acehacks-qr-toggle-text {
+  margin-right: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.acehacks-qr-toggle-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.acehacks-qr-toggle-icon::before,
+.acehacks-qr-toggle-icon::after {
+  content: '';
+  position: absolute;
+  background-color: #c637ff;
+  transition: all 0.3s ease;
+}
+
+.acehacks-qr-toggle-icon::before {
+  top: 7px;
+  left: 0;
+  width: 16px;
+  height: 2px;
+}
+
+.acehacks-qr-toggle-icon::after {
+  top: 0;
+  left: 7px;
+  width: 2px;
+  height: 16px;
+}
+
+.acehacks-qr-active .acehacks-qr-toggle-icon::after {
+  transform: scaleY(0);
+}
+
+.acehacks-qr-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+  margin-top: 0;
+  position: relative;
+}
+
+.acehacks-qr-visible {
+  max-height: 500px;
+  transition: max-height 0.4s ease-in-out;
+  margin-top: 15px;
+}
+
+.acehacks-qr-frame {
+  background-color: rgba(15, 6, 24, 0.8);
+  border: 2px solid rgba(198, 55, 255, 0.6);
+  border-radius: 3px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(198, 55, 255, 0.2);
+}
+
+.acehacks-qr-scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #25D366, transparent);
+  animation: acehacks-scan-animation 2s infinite linear;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+@keyframes acehacks-scan-animation {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: calc(100% - 2px);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.acehacks-qr-image {
+  max-width: 200px;
+  height: auto;
+  margin: 15px 0;
+  border: 4px solid white;
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.acehacks-qr-frame:hover .acehacks-qr-image {
+  transform: scale(1.02);
+}
+
+.acehacks-qr-info {
+  text-align: center;
+  color: #fff;
+}
+
+.acehacks-qr-label {
+  background-color: #25D366;
+  color: #000;
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-right: 5px;
+  display: inline-block;
+  transform: skewX(-10deg);
+}
+
+.acehacks-qr-note {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Make corners of frame glow on hover */
+.acehacks-qr-frame::before,
+.acehacks-qr-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.acehacks-qr-frame::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #c637ff;
+  border-left: 2px solid #c637ff;
+}
+
+.acehacks-qr-frame::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #c637ff;
+  border-right: 2px solid #c637ff;
+}
+
+.acehacks-qr-visible .acehacks-qr-frame:hover::before,
+.acehacks-qr-visible .acehacks-qr-frame:hover::after {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(198, 55, 255, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .acehacks-qr-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .acehacks-qr-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .acehacks-qr-image {
+    max-width: 180px;
+  }
+}
+
+
+/* Transaction ID Section - Cyberpunk Theme */
+.acehacks-payment-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #c637ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  position: relative;
+  display: inline-block;
+}
+
+.acehacks-payment-label::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, #c637ff, transparent);
+  bottom: -3px;
+  left: 0;
+}
+
+.acehacks-payment-container {
+  display: flex;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.acehacks-payment-input {
+  flex: 1;
+  background-color: rgba(20, 8, 30, 0.6) !important;
+  border: 1px solid rgba(198, 55, 255, 0.4) !important;
+  color: #fff !important;
+  padding: 12px 15px !important;
+  border-radius: 2px 0 0 2px !important;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease !important;
+}
+
+.acehacks-payment-input:focus {
+  box-shadow: 0 0 0 2px rgba(198, 55, 255, 0.25) !important;
+  border-color: #c637ff !important;
+  outline: none !important;
+}
+
+.acehacks-payment-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.acehacks-payment-btn {
+  position: relative;
+  background: linear-gradient(45deg, #198754, #25a567);
+  border: none;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.acehacks-payment-btn-text {
+  position: relative;
+  z-index: 3;
+  margin-left: 8px;
+}
+
+.acehacks-payment-btn i {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.acehacks-payment-btn:hover {
+  background: linear-gradient(45deg, #25a567, #1ed67e);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+}
+
+.acehacks-payment-btn:active {
+  transform: translateY(1px);
+}
+
+.acehacks-payment-btn-glow {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: -100px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: acehacks-payment-glow 3s infinite linear;
+  z-index: 2;
+}
+
+@keyframes acehacks-payment-glow {
+  0% {
+    left: -100px;
+  }
+  30% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.acehacks-payment-hint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  font-style: italic;
+  position: relative;
+  padding-left: 18px;
+}
+
+.acehacks-payment-hint::before {
+  content: 'ℹ️';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c637ff;
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+/* Glowing effect on focus for container */
+.acehacks-payment-container:focus-within {
+  filter: drop-shadow(0 0 5px rgba(198, 55, 255, 0.4));
+}
+
+/* Add terminal-style caret for text input */
+.acehacks-payment-input:focus {
+  caret-color: #c637ff;
+  animation: acehacks-caret-blink 1s infinite;
+}
+
+@keyframes acehacks-caret-blink {
+  0%, 49% {
+    caret-color: #c637ff;
+  }
+  50%, 100% {
+    caret-color: transparent;
+  }
+}
+
+/* Add tech border effect */
+.acehacks-payment-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, rgba(198, 55, 255, 0), rgba(198, 55, 255, 0.6), rgba(198, 55, 255, 0));
+  z-index: -1;
+  filter: blur(1px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.acehacks-payment-container:hover::before,
+.acehacks-payment-container:focus-within::before {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .acehacks-payment-container {
+    flex-direction: column;
+  }
+  
+  .acehacks-payment-input {
+    border-radius: 2px 2px 0 0 !important;
+  }
+  
+  .acehacks-payment-btn {
+    border-radius: 0 0 2px 2px;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: -1px;
+  }
+}

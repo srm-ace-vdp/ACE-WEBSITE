@@ -344,14 +344,38 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="transactionId">Transaction ID <span class="text-danger">*</span></label>
-                            <div class="input-group">
-                                <input type="text" id="transactionId" class="form-control" required>
-                                <button type="button" class="btn btn-success" onclick="openPaymentLink()">
-                                    <i class="bi bi-credit-card"></i> Pay ₹400
+                        <div class="acehacks-qr-section">
+                            <div class="acehacks-qr-header">
+                              <h4>Payment QR Code</h4>
+                              <button type="button" class="acehacks-qr-toggle" id="qrToggleBtn">
+                                <span class="acehacks-qr-toggle-text">Show QR Code</span>
+                                <span class="acehacks-qr-toggle-icon"></span>
+                              </button>
+                            </div>
+                            
+                            <div class="acehacks-qr-container" id="qrCodeContainer">
+                              <div class="acehacks-qr-frame">
+                                <div class="acehacks-qr-scanner-line"></div>
+                                <img src="QR.png" alt="Payment QR Code" class="acehacks-qr-image">
+                                <div class="acehacks-qr-info">
+                                  <p><span class="acehacks-qr-label">SCAN TO PAY</span> ₹400</p>
+                                  <p class="acehacks-qr-note">Save screenshot after payment</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="transactionId" class="acehacks-payment-label">Transaction ID <span class="text-danger">*</span></label>
+                            <div class="acehacks-payment-container">
+                                <input type="text" id="transactionId" class="form-control acehacks-payment-input" placeholder="Enter transaction ID after payment" required>
+                                <button type="button" class="acehacks-payment-btn" onclick="openPaymentLink()">
+                                    <span class="acehacks-payment-btn-glow"></span>
+                                    <i class="bi bi-credit-card"></i>
+                                    <span class="acehacks-payment-btn-text">PAY ₹400</span>
                                 </button>
                             </div>
+                            <div class="acehacks-payment-hint">Complete payment using QR code or click the Pay button</div>
                             <div class="error-text" id="transactionId-error"></div>
                         </div>
 
@@ -411,6 +435,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
     <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const qrToggleBtn = document.getElementById('qrToggleBtn');
+    const qrCodeContainer = document.getElementById('qrCodeContainer');
+    
+    qrToggleBtn.addEventListener('click', function() {
+      qrCodeContainer.classList.toggle('acehacks-qr-visible');
+      
+      const toggleText = qrToggleBtn.querySelector('.acehacks-qr-toggle-text');
+      if (qrCodeContainer.classList.contains('acehacks-qr-visible')) {
+        toggleText.textContent = 'Hide QR Code';
+        qrToggleBtn.classList.add('acehacks-qr-active');
+      } else {
+        toggleText.textContent = 'Show QR Code';
+        qrToggleBtn.classList.remove('acehacks-qr-active');
+      }
+    });
+  });
 
     // WhatsApp Popup Functions
     function showWhatsAppPopup() {
