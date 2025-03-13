@@ -1752,3 +1752,21 @@ html, body {
     margin-top: -1px;
   }
 }
+
+
+.toggle-btn {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
